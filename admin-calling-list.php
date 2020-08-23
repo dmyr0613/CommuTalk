@@ -28,12 +28,13 @@
 							echo '<td><input type="text" name="msg_no_' . $msg_no . '" value="', $row['message'], '"></td>';
 
 							echo '<td>';
-							echo '<input type="submit" id="mod_' . $msg_no . '" name="mod_' . $msg_no . '	class="button primary" value="Register"">';
+							echo '<input type="submit" id="mod_' . $msg_no . '" name="mod_' . $msg_no . '" class="button primary" value="Register">';
 							echo '</td>';
 							echo '<td>';
 						}
+						echo '</table>';
 						echo '</form>';
-						
+
 
 						// デバイス情報を取得する。
 						$sql=$pdo->prepare('select * from calling order by device_name');
