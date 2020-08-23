@@ -12,6 +12,28 @@
 				<section id="reserveMain">
 					<?php
 
+						$msg_no = 0;
+						// メッセージ情報を取得する。
+						$sql=$pdo->prepare('select * from talk_message order by msg_no');
+						$sql->execute();
+
+						echo '<form action="admin-msg-send.php" method="post">';				//送信用のpost
+						echo '<table>';
+						echo '<th width=25>メッセージNo</th><th>メッセージ</th><th width=20>送信</th>';
+						foreach ($sql as $row) {
+							$msg_no = $row['msg_no'];
+							echo '<tr>';
+							echo '<td>', $msg_no, '</td>';
+							// 一意にするため、nameにデバイス名を付加する。　
+							echo '<td><input type="text" name="msg_no_' . $msg_no . '" value="', $row['message'], '"></td>';
+
+							echo '<td>';
+							echo '<input type="submit" id="mod_' . $msg_no . '" name="mod_' . $msg_no . '	class="button primary" value="Register"">';
+							echo '</td>';
+							echo '<td>';
+						}
+
+
 						// デバイス情報を取得する。
 						$sql=$pdo->prepare('select * from calling order by device_name');
 						$sql->execute();
