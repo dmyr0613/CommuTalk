@@ -28,11 +28,23 @@
 
 							echo '<td>';
 							//echo '<input type="button" name="msg_id_' . $msg_no . '" value="Talk!!" onclick="sendAlart(', $row['message'], ');">';
-							//echo '<input type="button" id="sendAlart_' . $msg_no . '" class="button primary" value="Talk!!" onclick="sendAlart(1);">';
-							echo '<input type="button" value="通知No3" id="sendAlart3" onclick="sendAlart(3);">';
+							echo '<input type="button" id="sendAlart_' . $msg_no . '" class="button primary" value="Talk!!" onclick="sendAlart(1);">';
 							echo '</td>';
 						}
 						echo '</table>';
+
+						echo '<h4>下記ボタンクリックでも通知メッセージを送信します。</h4>';
+						echo '<p>';
+						echo '<input type="button" value="通知No1" id="sendAlart1" onclick="sendAlart(1);">';
+						echo '　';
+						echo '<input type="button" value="通知No2" id="sendAlart2" onclick="sendAlart(2);">';
+						echo '　';
+						echo '<input type="button" value="通知No3" id="sendAlart3" onclick="sendAlart(3);">';
+						echo '　';
+						echo '<input type="button" value="通知No4" id="sendAlart4" onclick="sendAlart(4);">';
+						echo '　';
+						echo '<input type="button" value="通知No5" id="sendAlart5" onclick="sendAlart(5);">';
+						echo '</p>';
 
 						echo '<h4>下記ボタンクリックでページを再読み込みします。</h4>';
 						echo '<p><INPUT TYPE="button" class="button primary" VALUE="再読み込み" onClick="window.location.reload();"></p>';
