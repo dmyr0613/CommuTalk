@@ -32,7 +32,8 @@
 							echo '</td>';
 							echo '<td>';
 						}
-
+						echo '</form>';
+						
 
 						// デバイス情報を取得する。
 						$sql=$pdo->prepare('select * from calling order by device_name');
