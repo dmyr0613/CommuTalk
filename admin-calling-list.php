@@ -28,7 +28,7 @@
 
 							echo '<td>';
 							//echo '<input type="button" name="msg_id_' . $msg_no . '" class="button primary" value="Talk!!" onclick="sendAlart(', $row['message'], ')>';
-							echo '<input type="button" name="msg_id_' . $msg_no . '" class="button primary" value="Talk!!">';
+							echo '<input type="button" name="msg_id_' . $msg_no . '" class="button primary" value="Talk!!" onclick="sendAlart(', $row['message'], ')";>';
 							//echo '<td>', $msg_no, '</td>';
 							echo '</td>';
 							echo '<td>';
