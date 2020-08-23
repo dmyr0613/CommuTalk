@@ -19,7 +19,7 @@
 
 						echo '<form action="admin-msg-send.php" method="post">';				//送信用のpost
 						echo '<table>';
-						echo '<th width=25>メッセージNo</th><th>メッセージ</th><th width=20>送信</th>';
+						echo '<th width=25>No</th><th>メッセージ</th><th>送信</th>';
 						foreach ($sql as $row) {
 							$msg_no = $row['msg_no'];
 							echo '<tr>';
@@ -28,7 +28,7 @@
 							echo '<td><input type="text" name="msg_no_' . $msg_no . '" value="', $row['message'], '"></td>';
 
 							echo '<td>';
-							echo '<input type="submit" id="mod_' . $msg_no . '" name="mod_' . $msg_no . '" class="button primary" value="Register">';
+							echo '<input type="submit" id="mod_' . $msg_no . '" name="mod_' . $msg_no . '" class="button primary" value="Talk!!">';
 							echo '</td>';
 							echo '<td>';
 						}
