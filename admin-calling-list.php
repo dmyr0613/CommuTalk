@@ -63,13 +63,13 @@
 	// アラート送信用 （引数にmsg_no）
 	function sendAlart(msg_no) {
 
-		//WebAPIを呼び出し
-		var request = new XMLHttpRequest();
-		request.open('GET', 'http://commutalk.herokuapp.com/push_calling_fb3.php?message=' + msg_no , true);
-		request.onload = function () {
-			//
-		};
-		request.send();
+		// //WebAPIを呼び出し
+		// var request = new XMLHttpRequest();
+		// request.open('GET', 'http://commutalk.herokuapp.com/push_calling_fb3.php?message=' + msg_no , true);
+		// request.onload = function () {
+		// 	//
+		// };
+		// request.send();
 
 		 var msg = "通知を行いました。 メッセージNo:" + msg_no;   // 表示文作成
 		 document.getElementById("PassageArea").innerHTML = msg;   // 表示更新
