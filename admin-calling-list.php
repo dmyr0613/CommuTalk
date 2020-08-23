@@ -27,13 +27,14 @@
 							echo '<td><input type="text" name="msg_no_' . $msg_no . '" value="', $row['message'], '"></td>';
 
 							echo '<td>';
-							//echo '<input type="button" name="msg_id_' . $msg_no . '" class="button primary" value="Talk!!" onclick="sendAlart(', $row['message'], ')>';
 							echo '<input type="button" name="msg_id_' . $msg_no . '" class="button primary" value="Talk!!" onclick="sendAlart(', $row['message'], ')";>';
-							//echo '<td>', $msg_no, '</td>';
 							echo '</td>';
 							echo '<td>';
 						}
 						echo '</table>';
+
+						echo '<h4>下記ボタンクリックでページを再読み込みします。</h4>';
+						echo '<p><INPUT TYPE="button" class="button primary" VALUE="再読み込み" onClick="window.location.reload();"></p>';
 						echo '<p id="PassageArea"></p>';
 					?>
 				</section>
