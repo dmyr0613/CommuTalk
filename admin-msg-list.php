@@ -14,7 +14,7 @@
 						$msg_no = 0;
 
 						// デバイス情報を取得する。
-						$sql=$pdo->prepare('select * from call_message order by msg_no');
+						$sql=$pdo->prepare('select * from talk_message order by msg_no');
 						$sql->execute();
 
 						echo '<form action="admin-msg-send.php" method="post">';				//送信用のpost
