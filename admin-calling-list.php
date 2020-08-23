@@ -17,7 +17,6 @@
 						$sql=$pdo->prepare('select * from talk_message order by msg_no');
 						$sql->execute();
 
-						echo '<form action="admin-msg-send.php" method="post">';				//送信用のpost
 						echo '<table>';
 						echo '<th>No</th><th>メッセージ</th><th>送信</th>';
 						foreach ($sql as $row) {
@@ -28,13 +27,12 @@
 							echo '<td><input type="text" name="msg_no_' . $msg_no . '" value="', $row['message'], '"></td>';
 
 							echo '<td>';
-							echo '<input type="button" id="id_' . $msg_no . '" name="name_' . $msg_no . '" class="button primary" value="Talk!!" onclick="sendAlart(', $row['message'], ')>';
+							echo '<input type="button" name="msg_id_' . $msg_no . '" class="button primary" value="Talk!!" onclick="sendAlart(', $row['message'], ')>';
 							//echo '<td>', $msg_no, '</td>';
 							echo '</td>';
 							echo '<td>';
 						}
 						echo '</table>';
-						echo '</form>';
 
 
 						// デバイス情報を取得する。
