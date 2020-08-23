@@ -28,8 +28,8 @@
 
 							echo '<td>';
 							//echo '<input type="button" name="msg_id_' . $msg_no . '" class="button primary" value="Talk!!" onclick="sendAlart(', $row['message'], ')";>';
-							echo '<input type="button" id="sendAlart_' . $msg_no . '" class="button primary" value="Talk!!" onclick="sendAlart(1);">';
-							//echo '<input type="button" value="通知No3" id="sendAlart3" onclick="sendAlart(3);">';
+							//echo '<input type="button" id="sendAlart_' . $msg_no . '" class="button primary" value="Talk!!" onclick="sendAlart(1);">';
+							echo '<input type="button" value="通知No3" id="sendAlart3" onclick="sendAlart(3);">';
 							echo '</td>';
 							echo '<td>';
 						}
