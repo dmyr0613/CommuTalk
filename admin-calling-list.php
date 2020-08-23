@@ -27,9 +27,9 @@
 							echo '<td><input type="text" name="msg_no_' . $msg_no . '" value="', $row['message'], '"></td>';
 
 							echo '<td>';
-							//echo '<input type="button" name="msg_id_' . $msg_no . '" class="button primary" value="Talk!!" onclick="sendAlart(', $row['message'], ')";>';
+							echo '<input type="button" name="msg_id_' . $msg_no . '" value="Talk!!" onclick="sendAlart(', $row['message'], ')";>';
 							//echo '<input type="button" id="sendAlart_' . $msg_no . '" class="button primary" value="Talk!!" onclick="sendAlart(1);">';
-							echo '<input type="button" value="通知No3" id="sendAlart3" onclick="sendAlart(3);">';
+							//echo '<input type="button" value="通知No3" id="sendAlart3" onclick="sendAlart(3);">';
 							echo '</td>';
 							echo '<td>';
 						}
@@ -54,7 +54,7 @@
 
 		//WebAPIを呼び出し
 		var request = new XMLHttpRequest();
-		request.open('GET', 'http://calloncall.herokuapp.com/push_calling_fb3.php?message='どうしましたか？'' + msg , true);
+		request.open('GET', 'http://commutalk.herokuapp.com/push_calling_fb3.php?message=' + msg , true);
 		request.onload = function () {
 			//
 		};
