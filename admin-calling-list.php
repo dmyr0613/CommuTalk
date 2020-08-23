@@ -60,19 +60,19 @@
 
 <script type="text/javascript">
 
-	// アラート送信用 （引数にmsg）
-	function sendAlart(msg) {
+	// アラート送信用 （引数にmsg_no）
+	function sendAlart(msg_no) {
 
 		//WebAPIを呼び出し
 		var request = new XMLHttpRequest();
-		request.open('GET', 'http://commutalk.herokuapp.com/push_calling_fb3.php?message=' + msg , true);
+		request.open('GET', 'http://commutalk.herokuapp.com/push_calling_fb3.php?message=' + msg_no , true);
 		request.onload = function () {
 			//
 		};
 		request.send();
 
-		 var dispmsg = "通知を行いました。 メッセージ:" + msg;   					// 表示文作成
-		 document.getElementById("PassageArea").innerHTML = dispmsg;   // 表示更新
+		 var msg = "通知を行いました。 メッセージNo:" + msg_no;   // 表示文作成
+		 document.getElementById("PassageArea").innerHTML = msg;   // 表示更新
 
 		 // window.location.reload();
 	}
