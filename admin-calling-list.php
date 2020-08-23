@@ -19,7 +19,7 @@
 
 						echo '<form action="admin-msg-send.php" method="post">';				//送信用のpost
 						echo '<table>';
-						echo '<th width=25>No</th><th>メッセージ</th><th>送信</th>';
+						echo '<th>No</th><th>メッセージ</th><th>送信</th>';
 						foreach ($sql as $row) {
 							$msg_no = $row['msg_no'];
 							echo '<tr>';
@@ -28,7 +28,7 @@
 							echo '<td><input type="text" name="msg_no_' . $msg_no . '" value="', $row['message'], '"></td>';
 
 							echo '<td>';
-							echo '<input type="submit" id="mod_' . $msg_no . '" name="mod_' . $msg_no . '" class="button primary" value="Talk!!">';
+							echo '<input type="submit" id="id_' . $msg_no . '" class="button primary" value="Talk!!" onclick="sendAlart(', $row['message'], ');>';
 							echo '</td>';
 							echo '<td>';
 						}
@@ -52,7 +52,7 @@
 							echo '<td>', $row['comment'], '</td>';
 						}
 						echo '</table>';
-						echo '<input type="submit" class="button primary" value="Register">';
+						echo '<input type="button" class="button primary" value="Register">';
 
 						// echo '<p>';
 						// echo '<input type="hidden" name="msg_no_" value="101"/>';
@@ -93,6 +93,8 @@
 						echo '</p>';
 						echo '<h4>下記ボタンクリックでページを再読み込みします。</h4>';
 						echo '<p><INPUT TYPE="button" class="button primary" VALUE="再読み込み" onClick="window.location.reload();"></p>';
+
+
 						echo '<p id="PassageArea"></p>';
 					?>
 				</section>
@@ -135,19 +137,19 @@
 	//    document.getElementById("startcount").disabled = false;   // 開始ボタンの有効化
 	// }
 
-	// アラート送信用 （引数にmsg_no）
-	function sendAlart(msg_no) {
+	// アラート送信用 （引数にmsg）
+	function sendAlart(msg) {
 
 		//WebAPIを呼び出し
 		var request = new XMLHttpRequest();
-		request.open('GET', 'http://calloncall.herokuapp.com/calling-set.php?device_name=&msg_no=' + msg_no , true);
+		request.open('GET', 'http://calloncall.herokuapp.com/push_calling_fb3.php?message='どうしましたか？'' + msg , true);
 		request.onload = function () {
 			//
 		};
 		request.send();
 
-		 var msg = "通知を行いました。 メッセージNo:" + msg_no;   // 表示文作成
-		 document.getElementById("PassageArea").innerHTML = msg;   // 表示更新
+		 var dispmsg = "通知を行いました。 メッセージ:" + msg;   					// 表示文作成
+		 document.getElementById("PassageArea").innerHTML = dispmsg;   // 表示更新
 
 		 // window.location.reload();
 	}
