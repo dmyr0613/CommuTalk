@@ -18,7 +18,7 @@
 						$sql->execute();
 
 						echo '<table>';
-						echo '<th>No</th><th>メッセージ</th><th>送信</th>';
+						echo '<th>No</th><th>メッセージ</th><th>発話</th>';
 						foreach ($sql as $row) {
 							$msg_no = $row['msg_no'];
 							echo '<tr>';
@@ -33,6 +33,19 @@
 						}
 						echo '</table>';
 
+						echo '<h4>下記ボタンクリックでも通知メッセージを送信します。</h4>';
+						echo '<p>';
+						echo '<input type="button" value="通知No1" id="sendAlart1" onclick="sendAlart(1);">';
+						echo '　';
+						echo '<input type="button" value="通知No2" id="sendAlart2" onclick="sendAlart(2);">';
+						echo '　';
+						echo '<input type="button" value="通知No3" id="sendAlart3" onclick="sendAlart(3);">';
+						echo '　';
+						echo '<input type="button" value="通知No4" id="sendAlart4" onclick="sendAlart(4);">';
+						echo '　';
+						echo '<input type="button" value="通知No5" id="sendAlart5" onclick="sendAlart(5);">';
+						echo '</p>';
+						
 						echo '<h4>下記ボタンクリックでページを再読み込みします。</h4>';
 						echo '<p><INPUT TYPE="button" class="button primary" VALUE="再読み込み" onClick="window.location.reload();"></p>';
 						echo '<p id="PassageArea"></p>';
@@ -46,17 +59,47 @@
 <?php require 'footer.php'; ?>
 
 <script type="text/javascript">
+	// var PassSec;   // 秒数カウント用変数
+	//
+	// // 繰り返し処理の中身
+	// function showPassage() {
+	//
+	// 	//WebAPIを呼び出し（プッシュ通知ALL）
+	// 	var request = new XMLHttpRequest();
+	// 	request.open('GET', 'http://calloncall.herokuapp.com/calling-push-all.php', true);
+	// 	request.onload = function () {
+	// 		//
+	// 	};
+	// 	request.send();
+	//
+	//    PassSec++;   // カウントアップ
+	//    var msg = "送信ボタンを押してから " + PassSec + "回 送信しました。";   // 表示文作成
+	//    document.getElementById("PassageArea").innerHTML = msg;   // 表示更新
+	// }
+	//
+	// // 繰り返し処理の開始
+	// function startShowing() {
+	//    PassSec = 0;   // カウンタのリセット
+	//    PassageID = setInterval('showPassage()',3000);   // タイマーをセット(1000ms間隔)
+	//    document.getElementById("startcount").disabled = true;   // 開始ボタンの無効化
+	// }
+	//
+	// // 繰り返し処理の中止
+	// function stopShowing() {
+	//    clearInterval( PassageID );   // タイマーのクリア
+	//    document.getElementById("startcount").disabled = false;   // 開始ボタンの有効化
+	// }
 
 	// アラート送信用 （引数にmsg_no）
 	function sendAlart(msg_no) {
 
-		// //WebAPIを呼び出し
-		// var request = new XMLHttpRequest();
-		// request.open('GET', 'http://commutalk.herokuapp.com/push_calling_fb3.php?message=' + msg_no , true);
-		// request.onload = function () {
-		// 	//
-		// };
-		// request.send();
+		//WebAPIを呼び出し
+		var request = new XMLHttpRequest();
+		request.open('GET', 'http://calloncall.herokuapp.com/calling-set.php?device_name=&msg_no=' + msg_no , true);
+		request.onload = function () {
+			//
+		};
+		request.send();
 
 		 var msg = "通知を行いました。 メッセージNo:" + msg_no;   // 表示文作成
 		 document.getElementById("PassageArea").innerHTML = msg;   // 表示更新
