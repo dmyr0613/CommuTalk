@@ -82,6 +82,8 @@
 	// アラート送信用 （引数にmsg_no）
 	function sendAlart(msg_no) {
 
+		console.log(msg_no);
+		
 		//WebAPIを呼び出し
 		var request = new XMLHttpRequest();
 		request.open('GET', 'http://commutalk.herokuapp.com/push_calling_fb3?message=' + msg_no , true);
