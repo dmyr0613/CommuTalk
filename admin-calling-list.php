@@ -17,7 +17,7 @@
 						$sql=$pdo->prepare('select * from talk_message order by msg_no');
 						$sql->execute();
 
-						echo '<form action="admin-calling-send.php" method="post">';				//送信用のpost
+						// echo '<form action="admin-calling-send.php" method="post">';				//送信用のpost
 						echo '<table>';
 						echo '<th>No</th><th>メッセージ</th><th>発話</th>';
 						foreach ($sql as $row) {
@@ -28,7 +28,7 @@
 							echo '<td><input type="text" name="msg_no_' . $msg_no . '" value="', $row['message'], '"></td>';
 
 							echo '<td>';
-							echo '<input type="button" name="msg_id_' . $msg_no . '" value="Talk!!" onclick="sendAlart(', $row['message'], ');">';
+							echo '<input type="button" name="msg_id_' . $msg_no . '" value="Talk!!" onclick="window.sendAlart(', $row['message'], ');">';
 							//echo '<input type="button" id="sendAlart_' . $msg_no . '" class="button primary" value="Talk!!" onclick="sendAlart(1);">';
 							// echo '<input type="submit" class="button primary" value="Talk!!">';
 							echo '</td>';
@@ -50,7 +50,7 @@
 						// echo '</td>';
 
 						echo '</table>';
-						echo '</form>';
+						// echo '</form>';
 
 						echo '<h4>下記ボタンクリックでも通知メッセージを送信します。</h4>';
 						echo '<p>';
@@ -83,7 +83,7 @@
 	function sendAlart(msg_no) {
 
 		console.log(msg_no);
-		
+
 		//WebAPIを呼び出し
 		var request = new XMLHttpRequest();
 		request.open('GET', 'http://commutalk.herokuapp.com/push_calling_fb3?message=' + msg_no , true);
