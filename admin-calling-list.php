@@ -33,6 +33,21 @@
 							echo '<input type="submit" class="button primary" value="Talk!!">';
 							echo '</td>';
 						}
+
+						echo '<tr>';
+						echo '<td>99</td>';
+						echo '<td>';
+						echo '<select name="msg_category" id="msg_category">';
+						echo '<option value="">- Category -</option>';
+						foreach ($sql as $row) {
+							$msg_no = $row['msg_no'];
+							// メッセージリスト作成
+							echo '<option value="1">', $row['message'], '</option>';
+						}
+						echo '</td>';
+						echo '<td>';
+						echo '<input type="submit" class="button primary" value="Talk!!">';
+						echo '</td>';
 						echo '</table>';
 						echo '</form>';
 
