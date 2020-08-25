@@ -29,7 +29,7 @@
 
 							echo '<td>';
 							// echo '<input type="button" name="msg_id_' . $msg_no . '" value="Talk!!" onclick="window.sendAlart(', $row['message'], ');">';
-							echo '<input type="button" id="sendAlart_' . $msg_no . '" class="button primary" value="Talk!!" onclick="sendAlart(' . $row['message'] . ');">';
+							echo '<input type="button" id="sendAlart_' . $msg_no . '" class="button primary" value="Talk!!" onclick="sendAlart("' . $row['message'] . '");">';
 							// echo '<input type="submit" class="button primary" value="Talk!!">';
 							echo '</td>';
 						}
