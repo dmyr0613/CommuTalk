@@ -20,19 +20,19 @@
 						echo '<form action="admin-calling-send.php" method="post">';				//送信用のpost
 						echo '<table>';
 						echo '<th>No</th><th>メッセージ</th><th>発話</th>';
-						foreach ($sql as $row) {
-							$msg_no = $row['msg_no'];
-							echo '<tr>';
-							echo '<td>', $msg_no, '</td>';
-							// 一意にするため、nameにデバイス名を付加する。　
-							echo '<td><input type="text" name="msg_no_' . $msg_no . '" value="', $row['message'], '"></td>';
-
-							echo '<td>';
-							//echo '<input type="button" name="msg_id_' . $msg_no . '" value="Talk!!" onclick="sendAlart(', $row['message'], ');">';
-							//echo '<input type="button" id="sendAlart_' . $msg_no . '" class="button primary" value="Talk!!" onclick="sendAlart(1);">';
-							echo '<input type="submit" class="button primary" value="Talk!!">';
-							echo '</td>';
-						}
+						// foreach ($sql as $row) {
+						// 	$msg_no = $row['msg_no'];
+						// 	echo '<tr>';
+						// 	echo '<td>', $msg_no, '</td>';
+						// 	// 一意にするため、nameにデバイス名を付加する。　
+						// 	echo '<td><input type="text" name="msg_no_' . $msg_no . '" value="', $row['message'], '"></td>';
+						//
+						// 	echo '<td>';
+						// 	//echo '<input type="button" name="msg_id_' . $msg_no . '" value="Talk!!" onclick="sendAlart(', $row['message'], ');">';
+						// 	//echo '<input type="button" id="sendAlart_' . $msg_no . '" class="button primary" value="Talk!!" onclick="sendAlart(1);">';
+						// 	echo '<input type="submit" class="button primary" value="Talk!!">';
+						// 	echo '</td>';
+						// }
 
 						echo '<tr>';
 						echo '<td>99</td>';
