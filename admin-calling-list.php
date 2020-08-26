@@ -29,7 +29,7 @@
 
 							echo '<td>';
 							// echo '<input type="button" name="msg_id_' . $msg_no . '" value="Talk!!" onclick="window.sendAlart(', $row['message'], ');">';
-							echo '<input type="button" id="sendAlart_' . $msg_no . '" class="button primary" value="Talk!!" onclick="sendAlart("' . $row['message'] . '");">';
+							echo '<input type="button" id="sendAlart_' . $msg_no . '" class="button primary" value="Talk!!" onclick="sendAlart(' . $msg_no . ');">';
 							// echo '<input type="submit" class="button primary" value="Talk!!">';
 							echo '</td>';
 						}
@@ -86,7 +86,7 @@
 
 		//WebAPIを呼び出し
 		var request = new XMLHttpRequest();
-		request.open('GET', 'http://commutalk.herokuapp.com/push_talk_msgno?msg_no=' + msg_no , true);
+		request.open('GET', 'http://commutalk.herokuapp.com/push_talk_msgno.php?msg_no=' + msg_no , true);
 		request.onload = function () {
 			//
 		};
