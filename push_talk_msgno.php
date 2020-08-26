@@ -23,7 +23,7 @@ try{
     $msg_no = $_GET['msg_no'];
 
 		if (!empty($msg_no)) {
-	    //talk_messageテーブルからレコード削除
+	    //talk_messageテーブルからメッセージ取得
 	    $sqlText   = 'select message from talk_message';
 	    $sqlText  .= ' where msg_no = ?';
 
@@ -32,12 +32,11 @@ try{
 	    $sql=$pdo->prepare($sqlText);
 	    $sql->execute([$msg_no]);
 	    $count = $sql->rowCount();
-			error_log($count);
 
 			if ($count > 0) {
-				//locationテーブルへINSERT
+				//メッセージ取得
 				foreach ($sql as $row) {
-					// 送信する文字列
+					// 送信するメッセージ
 					$alert = $row['message'];
 					error_log($alert);
 				}
