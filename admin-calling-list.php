@@ -86,7 +86,7 @@
 
 		//WebAPIを呼び出し
 		var request = new XMLHttpRequest();
-		request.open('GET', 'http://commutalk.herokuapp.com/push_calling_fb3?message=' + msg_no , true);
+		request.open('GET', 'http://commutalk.herokuapp.com/push_talk_msgno?msg_no=' + msg_no , true);
 		request.onload = function () {
 			//
 		};
