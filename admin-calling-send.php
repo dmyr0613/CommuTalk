@@ -18,25 +18,39 @@
 
 						foreach ($obj as $key => $val){
 							error_log($key);
+							$msg = $_REQUEST['free'];		//メッセージを抜き取る
+							error_log($msg);
 
-							if (substr_count($key, 'free') == 1) {
-								//文字列にmsg_noが含まれる場合
-								$device_name = substr($key, 7);	//デバイス名を抜き取る。
-								error_log($device_name);
-								$msg_no = $_REQUEST['free' . $device_name];
-								error_log($msg_no);
+							if (!empty($msg)) {
+								//meg_noの指定がある場合は、webAPIにて、メッセージNoを更新する。
+								$url = "http://commutalk.herokuapp.com/push_talk_msg.php?message=" . $msg;
+								$ch = curl_init();
+								curl_setopt($ch, CURLOPT_URL, $url);
 
-								// if ($msg_no > 0) {
-								// 	//meg_noの指定がある場合は、webAPIにて、メッセージNoを更新する。
-								// 	$url = "http://calloncall.herokuapp.com/calling-set.php?device_name=" . $device_name . "&msg_no=" . $msg_no;
-								// 	$ch = curl_init();
-								// 	curl_setopt($ch, CURLOPT_URL, $url);
-								//
-								// 	$response = curl_exec($ch);
-								// 	curl_close($ch);
-								// 	error_log(print_r($response, true));
-								// }
+								$response = curl_exec($ch);
+								curl_close($ch);
+								error_log(print_r($response, true));
 							}
+
+							//
+							// if (substr_count($key, 'free') == 1) {
+							// 	//文字列にmsg_noが含まれる場合
+							// 	$device_name = substr($key, 7);	//デバイス名を抜き取る。
+							// 	error_log($device_name);
+							// 	$msg_no = $_REQUEST['free' . $device_name];
+							// 	error_log($msg_no);
+							//
+							// 	// if ($msg_no > 0) {
+							// 	// 	//meg_noの指定がある場合は、webAPIにて、メッセージNoを更新する。
+							// 	// 	$url = "http://calloncall.herokuapp.com/calling-set.php?device_name=" . $device_name . "&msg_no=" . $msg_no;
+							// 	// 	$ch = curl_init();
+							// 	// 	curl_setopt($ch, CURLOPT_URL, $url);
+							// 	//
+							// 	// 	$response = curl_exec($ch);
+							// 	// 	curl_close($ch);
+							// 	// 	error_log(print_r($response, true));
+							// 	// }
+							// }
 						}
 
             echo '<p>メッセージを発話しました。</p>';
