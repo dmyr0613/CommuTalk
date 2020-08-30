@@ -30,6 +30,14 @@
 						}
 						echo '</table>';
 
+
+						echo '<form action="admin-calling-send.php" method="post">';				//送信用のpost
+						echo '<table>';
+						echo '<h4>メッセージ入力後、Talk!!ボタンにてメッセージを発話します。</h4>';
+						echo '<input type="text" name="msg_no_' . $msg_no . '" value="">';
+						echo '<input type="submit" class="button primary" value="Talk!!">';
+						echo '</form>';
+
 						echo '<h4>下記ボタンクリックでページを再読み込みします。</h4>';
 						echo '<p><INPUT TYPE="button" class="button primary" VALUE="再読み込み" onClick="window.location.reload();"></p>';
 						echo '<p id="PassageArea"></p>';
