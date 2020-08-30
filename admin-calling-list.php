@@ -32,7 +32,7 @@
 
 						echo '<form action="admin-calling-send.php" method="post">';				//送信用のpost
 						echo 'メッセージ入力後、Talk!!ボタンにてメッセージを発話します。';
-						echo '<p><input type="text" name="free" value=""></p>';
+						echo '<input type="text" name="free" value="">';
 						echo '<p><input type="submit" class="button primary" value="Talk!!"></p>';
 						echo '</form>';
 
