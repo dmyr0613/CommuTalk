@@ -32,10 +32,9 @@
 
 
 						echo '<form action="admin-calling-send.php" method="post">';				//送信用のpost
-						echo '<table>';
 						echo '<h4>メッセージ入力後、Talk!!ボタンにてメッセージを発話します。</h4>';
-						echo '<input type="text" name="msg_no_' . $msg_no . '" value="">';
-						echo '<input type="submit" class="button primary" value="Talk!!">';
+						echo '<input type="text" name="free" value="">';
+						echo '<p><input type="submit" class="button primary" value="Talk!!"></p>';
 						echo '</form>';
 
 						echo '<h4>下記ボタンクリックでページを再読み込みします。</h4>';

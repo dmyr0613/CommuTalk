@@ -20,11 +20,11 @@
 						foreach ($obj as $key => $val){
 							error_log($key);
 
-							if (substr_count($key, 'msg_no_') == 1) {
+							if (substr_count($key, 'free') == 1) {
 								//文字列にmsg_noが含まれる場合
 								$device_name = substr($key, 7);	//デバイス名を抜き取る。
 								error_log($device_name);
-								$msg_no = $_REQUEST['msg_no_' . $device_name];
+								$msg_no = $_REQUEST['free' . $device_name];
 								error_log($msg_no);
 
 								// if ($msg_no > 0) {
