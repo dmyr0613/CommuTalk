@@ -3,7 +3,7 @@ try{
 
 	$headers = array(
 			"Accept: application/x-www-form-urlencoded",
-			"Authorization: Basic jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6"
+			"Authorization: Basic jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:"
 			//"Authorization: Basic ". base64_encode("jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6")
 	);
 
