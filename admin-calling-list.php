@@ -74,7 +74,7 @@
 	function sendAnalyzeImage() {
 		var data = new FormData();
 		data.append('modelId', 'b8303123-3ee6-488c-823a-52a9d5e6fc8c');
-		data.append('file', file); // file is a Blob object
+		data.append('file', 'https://commutalk.herokuapp.com/images/strawberry.jpg');
 
 		var xhr = new XMLHttpRequest();
 

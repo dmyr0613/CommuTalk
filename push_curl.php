@@ -16,7 +16,7 @@ try{
 				'Authorization: Basic '. base64_encode("jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6")
 		);
 
-		$options = "modelId=b8303123-3ee6-488c-823a-52a9d5e6fc8c&file=http://commutalk.herokuapp.com/images/strawberry.jpg";
+		$options = "modelId=b8303123-3ee6-488c-823a-52a9d5e6fc8c&file=https://commutalk.herokuapp.com/images/strawberry.jpg";
 
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, 'https://app.nanonets.com/api/v2/ImageCategorization/LabelFile/');
@@ -31,7 +31,7 @@ try{
 		error_log(print_r($response, true));
 
 //コマンドプロンプトで以下を実行すると、同じAPIエラーになる
-// curl --request POST --url "https://app.nanonets.com/api/v2/ImageCategorization/LabelFile/" --header 'accept: multipart/form-data' -u 'jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:' -F 'modelId=b8303123-3ee6-488c-823a-52a9d5e6fc8c' -F 'file=http://commutalk.herokuapp.com/images/strawberry.jpg'
+// curl --request POST --url "https://app.nanonets.com/api/v2/ImageCategorization/LabelFile/" --header 'accept: multipart/form-data' -u 'jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:' -F 'modelId=b8303123-3ee6-488c-823a-52a9d5e6fc8c' -F 'file=https://commutalk.herokuapp.com/images/strawberry.jpg'
 
   }
 
