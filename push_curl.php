@@ -20,7 +20,8 @@ try{
 
 		$headers = array(
 				"Accept: application/x-www-form-urlencoded",
-				"Authorization: Basic jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6"
+				// "Authorization: Basic jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6"
+				'Authorization: Basic '. base64_encode("jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6")
 		);
 
 		$options = "modelId=b8303123-3ee6-488c-823a-52a9d5e6fc8c&urls=http://commutalk.herokuapp.com/images/strawberry.jpg";
