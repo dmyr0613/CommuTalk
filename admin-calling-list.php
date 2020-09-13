@@ -71,7 +71,7 @@
 		 // window.location.reload();
 	}
 
-	function sendAnalyzeImage(msg_no) {
+	function sendAnalyzeImage() {
 		var data = new FormData();
 		data.append('modelId', 'b8303123-3ee6-488c-823a-52a9d5e6fc8c');
 		data.append('file', file); // file is a Blob object
@@ -88,6 +88,7 @@
 		xhr.setRequestHeader("authorization", "Basic " + btoa("jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:"));
 
 		xhr.send(data);
+		document.getElementById("PassageArea").innerHTML = "AnalyzeImage";   // 表示更新
 	}
 
 </script>
