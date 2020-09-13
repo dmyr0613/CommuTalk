@@ -20,8 +20,12 @@ try{
 		// );
 
 		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, "curl --request POST --url 'https://app.nanonets.com/api/v2/ImageCategorization/LabelFile/' --header 'accept: multipart/form-data' -u 'jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:' -F 'modelId=b8303123-3ee6-488c-823a-52a9d5e6fc8c' -F 'file=@REPLACE_IMAGE_PATH.jpg'");
-		// curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+		// curl_setopt($ch, CURLOPT_URL, "curl --request POST --url 'https://app.nanonets.com/api/v2/ImageCategorization/LabelFile/' --header 'accept: multipart/form-data' -u 'jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:' -F 'modelId=b8303123-3ee6-488c-823a-52a9d5e6fc8c' -F 'file=@REPLACE_IMAGE_PATH.jpg'");
+		curl_setopt($ch, CURLOPT_URL, "curl --request POST --url 'https://app.nanonets.com/api/v2/ImageCategorization/LabelUrls/' --header 'accept: application/x-www-form-urlencoded' -d 'modelId=b8303123-3ee6-488c-823a-52a9d5e6fc8c&urls=http://commutalk.herokuapp.com/images/strawberry.jpg' -u 'jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:'");
+
+
+
+			// curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 		// curl_setopt($ch, CURLOPT_POST, 1);
 		// // curl_setopt($ch, CURLOPT_POSTFIELDS, $options);
 		// curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
