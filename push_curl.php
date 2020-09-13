@@ -20,16 +20,15 @@ try{
 
 		$headers = array(
 				"Accept: application/x-www-form-urlencoded",
-				"Basic Authorization: jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6"
+				"Authorization: Basic jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6"
 		);
 
 		$options = "modelId=b8303123-3ee6-488c-823a-52a9d5e6fc8c&urls=http://commutalk.herokuapp.com/images/strawberry.jpg";
 
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, 'https://app.nanonets.com/api/v2/ImageCategorization/LabelUrls/');
-		// curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6', 'Content-Type: application/x-www-form-urlencoded'));
-		curl_setopt($ch, CURLOPT_HTTPHEADER, 'Authorization: jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6');
-		// curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+		// curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: Basic jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6', 'Content-Type: application/x-www-form-urlencoded'));
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 		curl_setopt($ch, CURLOPT_POST, 1);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $options);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
