@@ -88,6 +88,8 @@
 		xhr.setRequestHeader("authorization", "Basic " + btoa("jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:"));
 
 		xhr.send(data);
+		console.log(data);
+		
 		document.getElementById("PassageArea").innerHTML = "AnalyzeImage";   // 表示更新
 	}
 
