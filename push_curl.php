@@ -33,7 +33,6 @@ try{
 //コマンドプロンプトで以下を実行すると、同じAPIエラーになる
 // curl --request POST --url "https://app.nanonets.com/api/v2/ImageCategorization/LabelFile/" --header 'accept: multipart/form-data' -u 'jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:' -F 'modelId=b8303123-3ee6-488c-823a-52a9d5e6fc8c' -F 'file=http://commutalk.herokuapp.com/images/strawberry.jpg'
 
-
   }
 
 }catch (PDOException $e){

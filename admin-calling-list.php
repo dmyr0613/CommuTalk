@@ -39,6 +39,8 @@
 						echo '下記ボタンクリックでページを再読み込みします。';
 						echo '<p><INPUT TYPE="button" VALUE="Reload" onClick="window.location.reload();"></p>';
 						echo '<p id="PassageArea"></p>';
+
+						echo '<p><INPUT TYPE="button" VALUE="AnalyzeImage" onClick="sendAnalyzeImage();"></p>';
 					?>
 				</section>
 
@@ -68,4 +70,24 @@
 
 		 // window.location.reload();
 	}
+
+	function sendAnalyzeImage(msg_no) {
+		var data = new FormData();
+		data.append('modelId', 'b8303123-3ee6-488c-823a-52a9d5e6fc8c');
+		data.append('file', file); // file is a Blob object
+
+		var xhr = new XMLHttpRequest();
+
+		xhr.addEventListener("readystatechange", function () {
+		  if (this.readyState === this.DONE) {
+		    console.log(this.responseText);
+		  }
+		});
+
+		xhr.open("POST", "https://app.nanonets.com/api/v2/ImageCategorization/LabelFile/");
+		xhr.setRequestHeader("authorization", "Basic " + btoa("jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:"));
+
+		xhr.send(data);
+	}
+
 </script>
