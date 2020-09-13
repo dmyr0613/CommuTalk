@@ -12,7 +12,7 @@ try{
 	curl_setopt($ch, CURLOPT_URL, 'https://app.nanonets.com/api/v2/ImageCategorization/LabelUrls/');
 	// curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: Basic jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6', 'Content-Type: application/x-www-form-urlencoded'));
 	// curl_setopt($ch, CURLOPT_HTTPHEADER, "Content-Type: application/x-www-form-urlencoded Authorization: Basic jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:");
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: Basic jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:', 'Content-Type: application/x-www-form-urlencoded'));
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array("Authorization: Basic jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:", "Accept: application/x-www-form-urlencoded"));
 	//curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 	curl_setopt($ch, CURLOPT_POST, 1);
 	curl_setopt($ch, CURLOPT_POSTFIELDS, $options);
