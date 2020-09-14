@@ -24,11 +24,12 @@ try{
   die();
 }
 
-echo '<script src="assets/js/jquery.min.js"></script>';
-echo '<script src="assets/js/browser.min.js"></script>';
-echo '<script src="assets/js/breakpoints.min.js"></script>';
-echo '<script src="assets/js/util.js"></script>';
-echo '<script src="assets/js/main.js"></script>';
+
+//echo '<script src="assets/js/jquery.min.js"></script>';
+//echo '<script src="assets/js/browser.min.js"></script>';
+// echo '<script src="assets/js/breakpoints.min.js"></script>';
+// echo '<script src="assets/js/util.js"></script>';
+// echo '<script src="assets/js/main.js"></script>';
 
 ?>
 
