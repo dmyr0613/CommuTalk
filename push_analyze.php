@@ -1,3 +1,28 @@
+<script type="text/javascript">
+
+	// Nanonetsを呼ぶ
+	function sendAnalyzeImage() {
+
+		var data = 'modelId=b8303123-3ee6-488c-823a-52a9d5e6fc8c&urls=https://commutalk.herokuapp.com/images/strawberry.jpg';
+
+		var xhr = new XMLHttpRequest();
+
+		xhr.addEventListener("readystatechange", function () {
+		  if (this.readyState === this.DONE) {
+		    console.log(this.responseText);
+		  }
+		});
+
+		xhr.open("POST", "https://app.nanonets.com/api/v2/ImageCategorization/LabelUrls/");
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		xhr.setRequestHeader("authorization", "Basic " + btoa("jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:"));
+
+		xhr.send(data);
+		document.getElementById("PassageArea").innerHTML = "AnalyzeImage";   // 表示更新
+	}
+
+</script>
+
 <?php
 
 try{
@@ -32,28 +57,3 @@ try{
 // echo '<script src="assets/js/main.js"></script>';
 
 ?>
-
-<script type="text/javascript">
-
-	// Nanonetsを呼ぶ
-	function sendAnalyzeImage() {
-
-		var data = 'modelId=b8303123-3ee6-488c-823a-52a9d5e6fc8c&urls=https://commutalk.herokuapp.com/images/strawberry.jpg';
-
-		var xhr = new XMLHttpRequest();
-
-		xhr.addEventListener("readystatechange", function () {
-		  if (this.readyState === this.DONE) {
-		    console.log(this.responseText);
-		  }
-		});
-
-		xhr.open("POST", "https://app.nanonets.com/api/v2/ImageCategorization/LabelUrls/");
-		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-		xhr.setRequestHeader("authorization", "Basic " + btoa("jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:"));
-
-		xhr.send(data);
-		document.getElementById("PassageArea").innerHTML = "AnalyzeImage";   // 表示更新
-	}
-
-</script>
