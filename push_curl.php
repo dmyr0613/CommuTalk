@@ -6,7 +6,7 @@ try{
 			"Authorization: Basic jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:"
 	);
 
-	$options = "modelId=b8303123-3ee6-488c-823a-52a9d5e6fc8c&urls=https://commutalk.herokuapp.com/images/strawberry.jpg";
+	$options = "modelId=b8303123-3ee6-488c-823a-52a9d5e6fc8c&urls=https://commutalk.herokuapp.com/upload/001.jpg";
 
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, 'https://app.nanonets.com/api/v2/ImageCategorization/LabelUrls/');
