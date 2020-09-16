@@ -10,7 +10,7 @@ try{
 
 	$options2 = array(
 			"modelId=b8303123-3ee6-488c-823a-52a9d5e6fc8c&urls=https://commutalk.herokuapp.com/upload/001.jpg",
-			"Authorization: jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6"
+			"jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:"
 	);
 
 	$ch = curl_init();
