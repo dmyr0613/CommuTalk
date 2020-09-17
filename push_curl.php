@@ -20,8 +20,8 @@ try{
 	);
 
 	$headers3 = array(
-		'Authorization' : 'Basic jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:',
-		'Content-Type': 'application/x-www-form-urlencoded'
+		'Authorization: Basic jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:',
+		'Content-Type: application/x-www-form-urlencoded'
 	);
 
 	$ch = curl_init();
