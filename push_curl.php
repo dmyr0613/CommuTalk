@@ -10,7 +10,13 @@ try{
 
 	$options2 = array(
 			"modelId=b8303123-3ee6-488c-823a-52a9d5e6fc8c&urls=https://commutalk.herokuapp.com/upload/001.jpg",
-			"Authorization: jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6"
+			"jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:"
+	);
+
+	$headers2 = array(
+			"accept: application/x-www-form-urlencoded",
+			"modelId=b8303123-3ee6-488c-823a-52a9d5e6fc8c&urls=https://commutalk.herokuapp.com/upload/001.jpg",
+			"jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:"
 	);
 
 	$ch = curl_init();
@@ -20,11 +26,13 @@ try{
 	// curl_setopt($ch, CURLOPT_HTTPHEADER, array("Authorization: jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6", "Accept: application/x-www-form-urlencoded"));
 
 	// curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type:application/x-www-form-urlencoded',]);
+	// curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type:application/x-www-form-urlencoded',]);
+
+	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers2);
 	curl_setopt($ch, CURLOPT_POST, 1);
 
 	// curl_setopt($ch, CURLOPT_POSTFIELDS, $options);
-	curl_setopt($ch, CURLOPT_POSTFIELDS, $options2);
+	// curl_setopt($ch, CURLOPT_POSTFIELDS, $options2);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
 	$response = curl_exec($ch);
