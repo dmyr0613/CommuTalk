@@ -27,7 +27,7 @@ try{
 	if ($arr === NULL) {
 	        return;
 	}else{
-	        $json_count = count($arr["result"]["prediction"]);
+	        $json_count = count($arr["message"]["prediction"]);
 					$label = array();
 	        $probability = array();
 	        for($i=$json_count-1;$i>=0;$i--){
