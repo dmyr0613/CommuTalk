@@ -18,8 +18,8 @@ try{
 	curl_close($ch);
 	error_log(print_r($response, true));
 
-	$json = mb_convert_encoding($response, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
-	$arr = json_decode($json,true);
+	// $json = mb_convert_encoding($response, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+	$arr = json_decode($response,true);
 
 error_log(print_r($arr, true));
 
