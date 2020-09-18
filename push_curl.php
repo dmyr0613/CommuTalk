@@ -1,32 +1,15 @@
 <?php
 try{
 
-	// $headers = array(
-	// 		"Accept: application/x-www-form-urlencoded",
-	// 		"Authorization: Basic jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:"
-	// );
-
 	$options = "modelId=b8303123-3ee6-488c-823a-52a9d5e6fc8c&urls=https://commutalk.herokuapp.com/upload/001.jpg";
-	//
-	// $options2 = array(
-	// 		"modelId=b8303123-3ee6-488c-823a-52a9d5e6fc8c&urls=https://commutalk.herokuapp.com/upload/001.jpg",
-	// 		"jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:"
-	// );
-	//
-	// $headers2 = array(
-	// 		"accept: application/x-www-form-urlencoded",
-	// 		"modelId=b8303123-3ee6-488c-823a-52a9d5e6fc8c&urls=https://commutalk.herokuapp.com/upload/001.jpg",
-	// 		"Authorization: Basic jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6"
-	// );
-
-	$headers3 = array(
+	$headers = array(
 		'Authorization: Basic ' . base64_encode("jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:"),
 		'Content-Type: application/x-www-form-urlencoded'
 	);
 
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, 'https://app.nanonets.com/api/v2/ImageCategorization/LabelUrls/');
-	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers3);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 	curl_setopt($ch, CURLOPT_POST, 1);
 	curl_setopt($ch, CURLOPT_POSTFIELDS, $options);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
