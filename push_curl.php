@@ -30,6 +30,16 @@ try{
 	}else{
 
 		 error_log(print_r($arr['result']['0']['prediction'], true));
+		 $json_count = count($arr['result']['0']['prediction']);
+
+     for($i=$json_count-1;$i>=0;$i--){
+
+ 				$row_array['label'] = $arr['result']['0']['prediction'][$i]['label'];
+ 				$row_array['probability'] = $arr['result']['0']['prediction'][$i]['probability'];
+
+ 				array_push($json_array,$row_array);
+     }
+
 		 // error_log(print_r($response['result'], true));
 
 			// error_log(print_r(json_decode($response, True)['result']));
@@ -63,7 +73,7 @@ try{
 	//半分おまじない。JSONで送りますよという合図
   header("Content-Type: text/javascript; charset=utf-8");
   //JSON 形式にエンコードしてechoでPOST送信
-  echo json_encode($arr);
+  echo json_encode($json_array);
 
 //コマンドプロンプトで以下を実行してもOKシングルクオーテーションではなくダブルクォーテーションで囲む
 //curl --request POST --url "https://app.nanonets.com/api/v2/ImageCategorization/LabelUrls/" --header "accept: application/x-www-form-urlencoded" -d "modelId=b8303123-3ee6-488c-823a-52a9d5e6fc8c&urls=https://commutalk.herokuapp.com/images/strawberry.jpg" -u "jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:"
