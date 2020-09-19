@@ -27,9 +27,9 @@ try{
 	if ($arr === NULL) {
 	        return;
 	}else{
-			error_log($arr['result']['prediction']);
-			error_log($arr['result']['prediction'][$i]['label']);
-			error_log($arr['result']['prediction'][$i]['probability']);
+			error_log($response['result']['prediction']);
+			error_log($response['result']['prediction'][$i]['label']);
+			error_log($response['result']['prediction'][$i]['probability']);
 
 			//
 	    //     $json_count = count($arr["message"]["prediction"]);
