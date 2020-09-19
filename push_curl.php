@@ -22,24 +22,27 @@ try{
 	$arr = json_decode($response,true);
 	error_log(print_r($arr, true));
 
-	// $json_array = array();
-	//
-	// if ($arr === NULL) {
-	//         return;
-	// }else{
-	// 		// error_log();
-	// 		//
-	//     //     $json_count = count($arr["message"]["prediction"]);
-	// 		// 		$label = array();
-	//     //     $probability = array();
-	//     //     for($i=$json_count-1;$i>=0;$i--){
-	// 		//
-	// 		// 				$row_array['label'] = $arr["result"]["prediction"][$i]["label"];
-	// 		// 				$row_array['probability'] = $arr["result"]["prediction"][$i]["blogData"];
-	// 		//
-	// 		// 				array_push($json_array,$row_array);
-	//     //     }
-	// }
+	$json_array = array();
+
+	if ($arr === NULL) {
+	        return;
+	}else{
+			error_log($arr['result']['prediction'];);
+			error_log($arr['result']['prediction'][$i]['label'];);
+			error_log($arr['result']['prediction'][$i]['probability'];);
+
+			//
+	    //     $json_count = count($arr["message"]["prediction"]);
+			// 		$label = array();
+	    //     $probability = array();
+	    //     for($i=$json_count-1;$i>=0;$i--){
+			//
+			// 				$row_array['label'] = $arr["result"]["prediction"][$i]["label"];
+			// 				$row_array['probability'] = $arr["result"]["prediction"][$i]["blogData"];
+			//
+			// 				array_push($json_array,$row_array);
+	    //     }
+	}
 
 
 
