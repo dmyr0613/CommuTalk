@@ -45,7 +45,7 @@ try{
 	//半分おまじない。JSONで送りますよという合図
   header("Content-Type: text/javascript; charset=utf-8");
   //JSON 形式にエンコードしてechoでPOST送信
-  echo json_encode($json_array);
+  echo json_encode($json_array, JSON_UNESCAPED_UNICODE);
 
 //コマンドプロンプトで以下を実行してもOKシングルクオーテーションではなくダブルクォーテーションで囲む
 //curl --request POST --url "https://app.nanonets.com/api/v2/ImageCategorization/LabelUrls/" --header "accept: application/x-www-form-urlencoded" -d "modelId=b8303123-3ee6-488c-823a-52a9d5e6fc8c&urls=https://commutalk.herokuapp.com/images/strawberry.jpg" -u "jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:"
