@@ -19,6 +19,7 @@ try{
 	error_log(print_r($response, true));
 
 	// $json = mb_convert_encoding($response, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+	$arr = array();
 	$arr = json_decode($response,true);
 	error_log(print_r($arr, true));
 
@@ -27,17 +28,19 @@ try{
 	if ($arr === NULL) {
 	        return;
 	}else{
-			error_log(print_r(json_decode($response, True)['result']));
+			// error_log(print_r(json_decode($response, True)['result']));
+			//
+			// error_log(print_r($response['result']['prediction']));
+			// error_log(print_r($response['result']['prediction'][$i]['label']));
+			// error_log(print_r($response['result']['prediction'][$i]['probability']));
 
-			error_log(print_r($response['result']['prediction']));
-			error_log(print_r($response['result']['prediction'][$i]['label']));
-			error_log(print_r($response['result']['prediction'][$i]['probability']));
-
+			$data = array();
 			foreach($arr as $data){
-				error_log($data["prediction"]);
-				error_log($data["prediction"]['label']);
-				error_log($data["prediction"]['probability']);
+				error_log($data["result"]["prediction"]);
+				error_log($data["result"]["prediction"]['label']);
+				error_log($data["result"]["prediction"]['probability']);
 			}
+
 			//
 	    //     $json_count = count($arr["message"]["prediction"]);
 			// 		$label = array();
