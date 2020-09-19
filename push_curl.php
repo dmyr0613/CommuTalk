@@ -29,11 +29,9 @@ try{
 	        return;
 	}else{
 
-		 error_log(print_r($arr['result']));
-		 error_log($arr['result']);
-		 error_log(print_r($response['result']));
-		 error_log($response['result']);
-	
+		 error_log(print_r($arr['result'], true));
+		 error_log(print_r($response['result'], true));
+
 			// error_log(print_r(json_decode($response, True)['result']));
 			//
 			// error_log(print_r($response['result']['prediction']));
