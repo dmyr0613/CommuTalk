@@ -35,8 +35,8 @@ try{
 		 $json_count = count($arr['result']['0']['prediction']);
      for($i=$json_count-1;$i>=0;$i--){
 			 	//labelに診断対象名、probabilityに診断結果
- 				$row_array['label'] = $arr['result']['0']['prediction'][$i]['label'];
- 				$row_array['probability'] = base64_encode($arr['result']['0']['prediction'][$i]['probability']);
+ 				$row_array['label'] = base64_encode($arr['result']['0']['prediction'][$i]['label']);
+ 				$row_array['probability'] = $arr['result']['0']['prediction'][$i]['probability'];
 				// JSON配列へ格納
  				array_push($json_array,$row_array);
      }
