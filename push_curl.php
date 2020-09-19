@@ -28,18 +28,24 @@ try{
 	if ($arr === NULL) {
 	        return;
 	}else{
+
+		 error_log(print_r($arr['result']));
+		 error_log($arr['result']);
+		 error_log(print_r($response['result']));
+		 error_log($response['result']);
+	
 			// error_log(print_r(json_decode($response, True)['result']));
 			//
 			// error_log(print_r($response['result']['prediction']));
 			// error_log(print_r($response['result']['prediction'][$i]['label']));
 			// error_log(print_r($response['result']['prediction'][$i]['probability']));
-
-			$data = array();
-			foreach($arr as $data){
-				error_log($data["result"]["prediction"]);
-				error_log($data["result"]["prediction"]['label']);
-				error_log($data["result"]["prediction"]['probability']);
-			}
+			//
+			// $data = array();
+			// foreach($arr as $data){
+			// 	error_log($data["result"]["prediction"]);
+			// 	error_log($data["result"]["prediction"]['label']);
+			// 	error_log($data["result"]["prediction"]['probability']);
+			// }
 
 			//
 	    //     $json_count = count($arr["message"]["prediction"]);
