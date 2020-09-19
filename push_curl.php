@@ -29,8 +29,8 @@ try{
 	        return;
 	}else{
 
-		 error_log(print_r($arr['result'], true));
-		 error_log(print_r($response['result'], true));
+		 error_log(print_r($arr['result']['0'], true));
+		 // error_log(print_r($response['result'], true));
 
 			// error_log(print_r(json_decode($response, True)['result']));
 			//
