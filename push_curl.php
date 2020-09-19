@@ -27,12 +27,17 @@ try{
 	if ($arr === NULL) {
 	        return;
 	}else{
-			error_log(print_r(json_decode($response->raw_body, True)['result']));
+			error_log(print_r(json_decode($response, True)['result']));
 
 			error_log(print_r($response['result']['prediction']));
 			error_log(print_r($response['result']['prediction'][$i]['label']));
 			error_log(print_r($response['result']['prediction'][$i]['probability']));
 
+			foreach($arr as $data){
+				error_log($data["prediction"]);
+				error_log($data["prediction"]['label']);
+				error_log($data["prediction"]['probability']);
+			}
 			//
 	    //     $json_count = count($arr["message"]["prediction"]);
 			// 		$label = array();
