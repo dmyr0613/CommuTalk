@@ -1,6 +1,7 @@
 <?php
 try{
 
+	//NanonetsのAPIを呼ぶ
 	$options = "modelId=b8303123-3ee6-488c-823a-52a9d5e6fc8c&urls=https://commutalk.herokuapp.com/upload/001.jpg";
 	$headers = array(
 		'Authorization: Basic ' . base64_encode("jdMwAIdjpRQ8OnK4vv6EeTB53MwZe1z6:"),
